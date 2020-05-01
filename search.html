@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for a Recipe</title>
+</head>
+<body>
+    <div class="row">
+      <div class="column">
+        <h2>Input Ingredients and Find Recipes with Those Ingredients</h2>
+        <form method="POST" name="recipe_search">
+            {% if error %}
+            <p class=error><strong>Error:</strong> {{ error }}
+            {% endif %}
+          
+          <p>
+            <input type="text" size="5" name="ingredient 1" /> Ingredient 1
+            <input type="text" size="5" name="ingredient 2" /> Ingredient 2
+          </p>
+          <p>
+            <input type="submit" value="Find a Recipe" />
+          </p>
+        </form>
+      </div>
+    </div>
+    </body>
