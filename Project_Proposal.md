@@ -22,14 +22,15 @@ Stretch Goal:
 
 ### 3. Implementation Plan:
 Library and framework:
-- Web Scraping -> Beautiful Soup, Selenium 
-- Database -> Pandas
+- JSON, URL, API --> EDAMAM
+- 
 
 General Plan:
-1. Scrape the websites for recipes
+1. Retrieve JSON for recipes and nutritions from EDAMAM
 2. Clean the data and form database
 3. Write program
-4. Implement it in web format
+4. Implement it in web format incorporating python and html
+5. Web Design using CSS
 
 ### 4. Project schedule: 
 
