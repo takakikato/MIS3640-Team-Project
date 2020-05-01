@@ -12,7 +12,7 @@ RECIPE_APP_KEY = "8ee308c4bae89de54b4e1d547fb0d7c7"
 NUTRITION_APP_KEY = "d01df5907c09a9b04ba0dd4c0d0ef652"
 NUTRITION_APP_ID = "366257d2"
 
-URL = f"https://api.edamam.com/search?q=chicken&app_id=${RECIPE_APP_ID}&app_key=${RECIPE_APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free"
+URL = f"https://api.edamam.com/search?app_id=${RECIPE_APP_ID}&app_key=${RECIPE_APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free"
 
 N_URL = f"https://api.edamam.com/api/nutrition-details?app_id=${NUTRITION_APP_ID}&app_key=${NUTRITION_APP_KEY}"
 
@@ -28,7 +28,7 @@ def get_json(url):
     response_data = json.loads(response_text)
     return response_data
 
-pprint(get_json(N_URL))
+pprint(get_json(URL))
 
 
 def get_recipe(ingredient):
