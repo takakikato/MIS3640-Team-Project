@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import requests
-from A import get_recipie, nutrition
+from A import get_recipe, get_nutrition
 
 app = Flask(__name__)
 
@@ -8,7 +8,7 @@ app = Flask(__name__)
 def welcome():
     return render_template("welcome.html")
 
-@app.route("/search/, methods=["GET", "POST"]")
-    def search():
-        if request.method == "POST":
-            
+@app.route("/search/", methods=["GET", "POST"])
+def search(list):
+    if request.method == "POST":
+       pass

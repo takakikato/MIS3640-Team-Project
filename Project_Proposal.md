@@ -79,4 +79,4 @@ Week 10:
 The largest risks that could possibly stand in the way of this project would be web scraping and data rights of the websites we get the data from. Companies nowadays are very sensitive to how their data is collected and used. If our web scraping tool needs to be approved by the company there may not be enough time to complete the project.
 
 ### 7. Additional Course Content: 
-
+- CSS/Web design
