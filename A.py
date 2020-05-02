@@ -82,7 +82,6 @@ def print_recipe_nutrition(ingredient, choice):
         if nutrient['label'] == 'Protein':
             print('----------------------------------------------------------------')
     print('----------------------------------------------------------------')
-    # pprint(response[0]['recipe']['digest'][0]['sub'][0])
     
 
 def get_nutrition(title, ingredient):
@@ -107,7 +106,6 @@ def print_nutrition(title, ingredient):
 
     Given title of the recipe and list of ingredients, prints properly formatted nutrional facts of the recipe
     '''
-
     response = get_nutrition(title, ingredient)
 
     daily = response['totalDaily']
