@@ -44,6 +44,20 @@ def get_recipe(ingredient, end, start = 0):
 # pprint(get_recipe(['1 cup rice', '5 shrimps', '2 eggs', 'half carrot', '150g chicken '],3))
 
 
+def get_recipe2(ingredient, end):
+    response = get_recipe(ingredient, end)
+
+    recipes = []
+    keys = ['label', 'calories', 'cautions', 'dietLabels', 'healthLabels', 'ingredientLines']
+
+    for recipe in response:
+        dic = recipe['recipe']
+        sub = {key: dic[key] for key in keys}
+        recipes.append(sub)
+
+    return recipes
+
+
 def print_recipe(ingredient, end):
     '''
     ingredient: string
@@ -131,14 +145,15 @@ def print_nutrition(title, ingredient):
 
 
 def main():
-    print_recipe('Fried Rice', 3)
-    print_recipe_nutrition('Fried Rice', 3)
+    pprint(get_recipe2('fried rice', 3))
+    # print_recipe('Fried Rice', 3)
+    # print_recipe_nutrition('Fried Rice', 3)
 
-    print('\n')
+    # print('\n')
 
-    title = 'Takaki Fried Rice'
-    ingredient = ['1 cup rice', '5 shrimps', '2 eggs', 'half carrot', '150g chicken ']
-    print_nutrition(title, ingredient)
+    # title = 'Takaki Fried Rice'
+    # ingredient = ['1 cup rice', '5 shrimps', '2 eggs', 'half carrot', '150g chicken ']
+    # print_nutrition(title, ingredient)
 
 
 if __name__ == "__main__":
