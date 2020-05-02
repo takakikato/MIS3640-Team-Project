@@ -1,4 +1,5 @@
 import requests
+
 from pprint import pprint
 
 
@@ -39,6 +40,8 @@ def get_recipe(ingredient, end, start = 0):
     url = 'https://api.edamam.com/search'
 
     return get_json(url, parameters)['hits']
+
+# pprint(get_recipe(['1 cup rice', '5 shrimps', '2 eggs', 'half carrot', '150g chicken '],3))
 
 
 def get_recipe2(ingredient, end):
