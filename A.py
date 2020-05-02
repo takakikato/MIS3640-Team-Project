@@ -127,6 +127,7 @@ def print_nutrition(title, ingredient):
         if daily[nutrient]['label'] == 'Energy' or daily[nutrient]['label'] == 'Protein':
             print('----------------------------------------------------------------')
     print('----------------------------------------------------------------')
+    
 
 
 def main():
