@@ -6,7 +6,7 @@ app.secret_key = 'dljsaklqk24e21cjn!Ew@@dsa5'
 
 @app.route('/')
 def welcome():
-    return render_template('welcome_2.html')
+    return render_template('welcome.html')
     
 
 @app.route("/search/", methods=["GET", "POST"])
