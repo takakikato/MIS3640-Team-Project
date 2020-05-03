@@ -16,8 +16,8 @@ def search():
         ingredient_2 = str(request.form["ingredient 2"])
         ingredient_3 = str(request.form["ingredient 3"])
         ingredient_4 = str(request.form["ingredient 4"])
-
-        ingredient = [ingredient_1, ingredient_2, ingredient_3, ingredient_4]
+        ingredient = ingredient_1+' '+ingredient_2+' '+ingredient_3+' '+ingredient_4
+        # ingredient = [ingredient_1, ingredient_2, ingredient_3, ingredient_4]
         recipes  = get_recipe2(ingredient, 3)
         label_1 = recipes[0]['label']
         label_2 = recipes[1]['label']
