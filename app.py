@@ -32,10 +32,28 @@ def search():
         cautions_2 = recipes[1]['cautions']
         cautions_3 = recipes[2]['cautions']
 
+        dietLabels_1 = recipes[0]['dietLabels']
+        dietLabels_2 = recipes[1]['dietLabels']
+        dietLabels_3 = recipes[2]['dietLabels']
+
+        healthLabels_1 = recipes[0]['healthLabels']
+        healthLabels_2 = recipes[1]['healthLabels']
+        healthLabels_3 = recipes[2]['healthLabels']
+
+        ingredientLines_1 = recipes[0]['ingredientLines']
+        ingredientLines_2 = recipes[1]['ingredientLines']
+        ingredientLines_3 = recipes[2]['ingredientLines']
+
+        url_1 = recipes[0]['url']
+        url_2 = recipes[1]['url']
+        url_3 = recipes[2]['url']
 
 
         if recipes:
-            return render_template("results.html", calories_1=calories_1, label_1=label_1)
+            return render_template("results.html", calories_1=calories_1, calories_2=calories_2, calories_3=calories_3, label_1=label_1, label_2=label_2,
+            label_3=label_3, cautions_1=cautions_1, cautions_2=cautions_2, cautions_3=cautions_3, dietLabels_1=dietLabels_1, dietLabels_2=dietLabels_2, dietLabels_3=dietLabels_3,
+            healthLabels_1=healthLabels_1, healthLabels_2=healthLabels_2, healthLabels_3=healthLabels_3, ingredientLines_1=ingredientLines_1, ingredientLines_2=ingredientLines_2,
+            ingredientLines_3=ingredientLines_3, url_1=url_1, url_2=url_2, url_3=url_3)
         else:
             return render_template("search.html", error=True)
 

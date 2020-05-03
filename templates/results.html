@@ -6,10 +6,18 @@
     <title>Recommended Recipes</title>
 </head>
 <body>
-    <h1>Result</h1>
+    <h1>Here are your recommended recipes!</h1>
+    <p>You can find link to the recipe below for step to step recipe guide.</p>
+
+
     <h2> First Recommendation: {{label_1}}</h2>
-    <p> Calories: {{ calories_1 }}. </p>
-    <p> Link to Recipe: {{ url_1 }}</p>
+    <h3> Calories: {{ calories_1 }}  |  Caution: {{ cautions_1 }}  </h3>
+    <h4> Diet Labels: {{ dietLabels_1 }}  | Health Labels {{ healthLabels_1 }}</h4>
+
+    <p> Ingredients: </p>
+    <p> {{ingredientLines_1}} </p>
+
+    <a href= "{{ url_1 }}">Link to Recipe:</a>
     
 </body>
 </html>
