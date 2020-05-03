@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request
 from flask import render_template
-from A import get_recipe, get_nutrition, print_recipe_nutrition, get_recipe2, get_recipe_url
+from A import get_recipe, get_nutrition, print_recipe_nutrition, get_recipe2, get_recipe_nutrition
 
 app = Flask(__name__)
 
@@ -24,25 +24,26 @@ def search():
         label_2 = recipes[1]['label']
         label_3 = recipes[2]['label']
 
-        calories_1 = recipes[0]['calories']
-        calories_2 = recipes[1]['calories']
-        calories_3 = recipes[2]['calories']        
+        calories_1 = float(recipes[0]['calories'])
+        calories_2 = float(recipes[1]['calories'])
+        calories_3 = float(recipes[2]['calories'])        
 
-        cautions_1 = recipes[0]['cautions']
-        cautions_2 = recipes[1]['cautions']
-        cautions_3 = recipes[2]['cautions']
 
-        dietLabels_1 = recipes[0]['dietLabels']
-        dietLabels_2 = recipes[1]['dietLabels']
-        dietLabels_3 = recipes[2]['dietLabels']
+        cautions_1 = ', '.join(recipes[0]['cautions'])
+        cautions_2 = ', '.join(recipes[1]['cautions'])
+        cautions_3 = ', '.join(recipes[2]['cautions'])
 
-        healthLabels_1 = recipes[0]['healthLabels']
-        healthLabels_2 = recipes[1]['healthLabels']
-        healthLabels_3 = recipes[2]['healthLabels']
+        dietLabels_1 = ', '.join(recipes[0]['dietLabels'])
+        dietLabels_2 = ', '.join(recipes[1]['dietLabels'])
+        dietLabels_3 = ', '.join(recipes[2]['dietLabels'])
 
-        ingredientLines_1 = recipes[0]['ingredientLines']
-        ingredientLines_2 = recipes[1]['ingredientLines']
-        ingredientLines_3 = recipes[2]['ingredientLines']
+        healthLabels_1 = ', '.join(recipes[0]['healthLabels'])
+        healthLabels_2 = ', '.join(recipes[1]['healthLabels'])
+        healthLabels_3 = ', '.join(recipes[2]['healthLabels'])
+
+        ingredientLines_1 = ', '.join(recipes[0]['ingredientLines'])
+        ingredientLines_2 = ', '.join(recipes[1]['ingredientLines'])
+        ingredientLines_3 = ', '.join(recipes[2]['ingredientLines'])
 
         url_1 = recipes[0]['url']
         url_2 = recipes[1]['url']
@@ -58,3 +59,12 @@ def search():
             return render_template("search.html", error=True)
 
     return render_template("search.html", error=None)
+
+
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template('error.html'), 500
+
+@app.errorhandler(400)
+def page_not_found(e):
+    return render_template('error.html'), 400

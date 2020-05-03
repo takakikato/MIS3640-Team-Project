@@ -185,7 +185,10 @@ def print_nutrition(title, ingredient):
 
 
 def main():
-    pprint(get_recipe2('fried rice', 3))
+    # pprint(get_recipe2('fried rice', 3))
+    
+    pprint(get_recipe_nutrition('fried rice', 3))
+
 
 
     # pprint(get_recipe_nutrition('friend rice', 1))
