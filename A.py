@@ -47,7 +47,7 @@ def get_recipe2(ingredient, end):
     response = get_recipe(ingredient, end)
 
     recipes = []
-    keys = ['label', 'calories', 'cautions', 'dietLabels', 'healthLabels', 'ingredientLines']
+    keys = ['label', 'calories', 'cautions', 'dietLabels', 'healthLabels', 'ingredientLines', 'url']
 
     for recipe in response:
         dic = recipe['recipe']
