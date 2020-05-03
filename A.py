@@ -47,7 +47,7 @@ def get_recipe2(ingredient, end):
     response = get_recipe(ingredient, end)
 
     recipes = []
-    keys = ['label', 'calories', 'cautions', 'dietLabels', 'healthLabels', 'ingredientLines', 'url']
+    keys = ['label', 'calories', 'cautions', 'dietLabels', 'healthLabels', 'ingredientLines', 'url', 'image']
 
     for recipe in response:
         dic = recipe['recipe']
@@ -56,12 +56,6 @@ def get_recipe2(ingredient, end):
 
     return recipes
 
-def get_recipe_url(ingredient, end):
-    response = get_recipe(ingredient, end)
-    url_r = []
-    for recipe in response:
-        url_r.append(recipe['recipe']['url'])
-    return url_r
 
 
 def get_recipe_nutrition(ingredient, choice):
@@ -187,8 +181,9 @@ def print_nutrition(title, ingredient):
 def main():
     # pprint(get_recipe2('fried rice', 3))
     
-    pprint(get_recipe_nutrition('fried rice', 3))
+    # pprint(get_recipe_nutrition('fried rice', 3))
 
+    # pprint(get_recipe_nutrition(['1 cup rice', '5 shrimps', '2 eggs', 'half carrot', '150g chicken '],3))
 
 
     # pprint(get_recipe_nutrition('friend rice', 1))
@@ -201,8 +196,7 @@ def main():
     # title = 'Takaki Fried Rice'
     # ingredient = ['1 cup rice', '5 shrimps', '2 eggs', 'half carrot', '150g chicken ']
     # print_nutrition(title, ingredient)
+    pass
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
-
