@@ -1,6 +1,8 @@
 import requests
 from pprint import pprint
 
+recipe_id, recipe_key, nutrition_id, nutrition_key = 'ef73e741', '687e39d9619e78a7956d715af8585b7b', '366257d2', 'd01df5907c09a9b04ba0dd4c0d0ef652'
+
 
 def get_json(url, parameters):
     '''
@@ -35,7 +37,7 @@ def get_recipe(ingredient, end, start = 0):
     Given a string containing ingredients, return JSON object containing the recipes that include given ingredients.
     Retrun number of recipes between start and end.
     '''
-    parameters = {'app_id': 'ef73e741', 'app_key': '687e39d9619e78a7956d715af8585b7b', 'q': ingredient, 'from': start, 'to': end}
+    parameters = {'app_id': recipe_id, 'app_key': recipe_key, 'q': ingredient, 'from': start, 'to': end}
     url = 'https://api.edamam.com/search'
 
     return get_json(url, parameters)['hits']
@@ -156,7 +158,7 @@ def get_nutrition(title, ingredient):
 
     Given title of the recipe, and list of ingredients, returns JSON object containing nutritional fact of the recipe.
     '''
-    parameteres = {'app_id': '366257d2', 'app_key': 'd01df5907c09a9b04ba0dd4c0d0ef652'}
+    parameteres = {'app_id': nutrition_id, 'app_key': nutrition_key}
     json = {'title': title, 'ingr': ingredient}
     header = {'Content-type': 'application/json'}
     url = 'https://api.edamam.com/api/nutrition-details'
