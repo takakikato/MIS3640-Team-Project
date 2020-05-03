@@ -8,18 +8,17 @@ app = Flask(__name__)
 @app.route('/')
 def welcome():
     return render_template('welcome.html')
+    
 
 @app.route("/search/", methods=["GET", "POST"])
-def recipe_search():
+def search():
     if request.method == "POST":
         ingredient = str(request.form["ingredient"])
         recipes  = get_recipe2(ingredient, 3)
         label_1 = recipes[0]['label']
         calories_1 = recipes[0]['calories']
-        url = get_recipe_url(ingredient, 3)
-        url_1 = url[0]
         if recipes:
-            return render_template("results.html", url=url, calories_1=calories_1, label_1=label_1)
+            return render_template("results.html", calories_1=calories_1, label_1=label_1)
         else:
             return render_template("results.html", error=True)
 
