@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-    return render_template('welcome.html')
+    return render_template('welcome_2.html')
     
 
 @app.route("/search/", methods=["GET", "POST"])
