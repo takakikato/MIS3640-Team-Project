@@ -44,6 +44,13 @@ def get_recipe(ingredient, end, start = 0):
 
 
 def get_recipe2(ingredient, end):
+    '''
+    ingredient: string
+    end: integer
+
+    Given a string containing ingredients, returns properly formatted recipes that include given ingredients.
+    Retruns end numbers of recipes.
+    '''
     response = get_recipe(ingredient, end)
 
     recipes = []
@@ -63,7 +70,7 @@ def get_recipe_nutrition(ingredient, choice):
     ingredient: string
     choice: integer
 
-    Given a string containing ingredients, prints properly formatted nutritional facts for chosen recipe.
+    Given a string containing ingredients, returns properly formatted nutritional facts for chosen recipe.
     '''
     response = get_recipe(ingredient, choice, choice-1)[0]['recipe']
 
@@ -80,14 +87,23 @@ def get_recipe_nutrition(ingredient, choice):
     # # format -> {calories, cautions, dietlabels, healthlabels, label, nutrition:[{daily, label, total, unit} for each of nutrient]}
 
 
-    # 2. list of strings format
+    # # 2. list of strings format
+    # nutritions = []
+    # for nutrition in response['digest']:
+    #     string = f"{nutrition['label']}: {nutrition['total']:.2f}{nutrition['unit']} {nutrition['daily']:.2f}%"
+    #     nutritions.append(string)
+    # nutritions = [response['label'], response['calories'], ', '.join(response['cautions']), ', '.join(response['dietLabels']), ', '.join(response['healthLabels']), nutritions]
+    # # format -> [label, calories, cautions, dietlabels, healthlabels, string list of nutritions]
+
+    # 3. list of list format
     nutritions = []
     for nutrition in response['digest']:
-        string = f"{nutrition['label']}: {nutrition['total']:.2f}{nutrition['unit']} {nutrition['daily']:.2f}%"
+        string = []
+        string.extend([nutrition['label'], f"{nutrition['total']:.2f}{nutrition['unit']}", f"{nutrition['daily']:.2f}%"])
         nutritions.append(string)
     
     nutritions = [response['label'], response['calories'], ', '.join(response['cautions']), ', '.join(response['dietLabels']), ', '.join(response['healthLabels']), nutritions]
-    # format -> [label, calories, cautions, dietlabels, healthlabels, string list of nutritions]
+    # format -> [label, calories, cautions, dietlabels, healthlabels, list of list nutrients]
 
     return nutritions
 
@@ -181,7 +197,7 @@ def print_nutrition(title, ingredient):
 def main():
     # pprint(get_recipe2('fried rice', 3))
     
-    # pprint(get_recipe_nutrition('fried rice', 3))
+    pprint(get_recipe_nutrition('fried rice', 3))
 
     # pprint(get_recipe_nutrition(['1 cup rice', '5 shrimps', '2 eggs', 'half carrot', '150g chicken '],3))
 
