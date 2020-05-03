@@ -189,7 +189,6 @@ def main():
 
 
     # pprint(get_recipe_nutrition('friend rice', 1))
-    print(get_recipe_url('fried rice', 3))
 
     # print_recipe('Fried Rice', 3)
     # print_recipe_nutrition('Fried Rice', 3)
