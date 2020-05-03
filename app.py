@@ -20,6 +20,6 @@ def search():
         if recipes:
             return render_template("results.html", calories_1=calories_1, label_1=label_1)
         else:
-            return render_template("results.html", error=True)
+            return render_template("search.html", error=True)
 
-    return render_template("results.html", error=None)
+    return render_template("search.html", error=None)
