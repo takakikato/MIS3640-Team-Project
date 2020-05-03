@@ -58,6 +58,40 @@ def get_recipe2(ingredient, end):
     return recipes
 
 
+def get_recipe_nutrition(ingredient, choice):
+    '''
+    ingredient: string
+    choice: integer
+
+    Given a string containing ingredients, prints properly formatted nutritional facts for chosen recipe.
+    '''
+    response = get_recipe(ingredient, choice, choice-1)[0]['recipe']
+
+  
+    # # 1. dictionary format
+    # keys = ['label', 'daily', 'total', 'unit']
+    # keys2 = ['label', 'calories', 'cautions', 'dietLabels', 'healthLabels']
+    # nutritions = {key: response[key] for key in keys2}
+    # nutritions['nutrition'] = []
+
+    # for nutrition in response['digest']:
+    #     sub = {key: nutrition[key] for key in keys}
+    #     nutritions['nutrition'].append(sub)
+    # # format -> {calories, cautions, dietlabels, healthlabels, label, nutrition:[{daily, label, total, unit} for each of nutrient]}
+
+
+    # 2. list of strings format
+    nutritions = []
+    for nutrition in response['digest']:
+        string = f"{nutrition['label']}: {nutrition['total']:.2f}{nutrition['unit']} {nutrition['daily']:.2f}%"
+        nutritions.append(string)
+    
+    nutritions = [response['label'], response['calories'], ', '.join(response['cautions']), ', '.join(response['dietLabels']), ', '.join(response['healthLabels']), nutritions]
+    # format -> [label, calories, cautions, dietlabels, healthlabels, string list of nutritions]
+
+    return nutritions
+
+
 def print_recipe(ingredient, end):
     '''
     ingredient: string
@@ -145,6 +179,9 @@ def print_nutrition(title, ingredient):
 
 def main():
     pprint(get_recipe2('fried rice', 3))
+
+    # pprint(get_recipe_nutrition('friend rice', 1))
+
     # print_recipe('Fried Rice', 3)
     # print_recipe_nutrition('Fried Rice', 3)
 
