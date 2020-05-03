@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Info</title>
+    <style>
+        p.small{
+            line-height: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nutrition Info</h1>
+    <h1></h1>
+    <h2>{{label}}</h2>
+    <h3> Calories: {{calories}}  |  Caution: {{cautions}}  </h3>
+    <h4> Diet Labels: {{dietLabels}}  | Health Labels {{healthLabels}}</h4>
+
+    <!-- {% for nutrition in nutritions %}
+        <p class="small">{{ nutrition }}</p>
+    {% endfor %} -->
+
+    <table>
+        <tr>
+            <td><b>Nutrient</b></td>
+            <td><b>Total</b></td>
+            <td><b>% Daily Value</b></td>
+        </tr>
+        {% for nutrition in nutritions %}
+            <tr>
+                {% for item in nutrition %}
+                    <td>{{item}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

@@ -1,13 +1,12 @@
-from flask import Flask
-from flask import request
-from flask import render_template
-from A import get_recipe, get_nutrition, print_recipe_nutrition, get_recipe2, get_recipe_nutrition
+from flask import Flask, request, render_template, session
+from recipe import get_recipe2, get_recipe_nutrition
 
 app = Flask(__name__)
+app.secret_key = 'dljsaklqk24e21cjn!Ew@@dsa5'
 
 @app.route('/')
 def welcome():
-    return render_template('welcome.html')
+    return render_template('welcome_2.html')
     
 
 @app.route("/search/", methods=["GET", "POST"])
@@ -53,6 +52,7 @@ def search():
         image_2 = recipes[1]['image']
         image_3 = recipes[2]['image']
 
+        session['ingredient'] = ingredient
 
         if recipes:
             return render_template("results.html", calories_1=calories_1, calories_2=calories_2, calories_3=calories_3, label_1=label_1, label_2=label_2,
@@ -65,6 +65,22 @@ def search():
     return render_template("search.html", error=None)
 
 
+@app.route("/nutrition/", methods=["GET", "POST"])
+def nutrition():
+    choice = int(request.args.get('choice', None))
+    ingredient = session.get('ingredient', None)
+    nutrition = get_recipe_nutrition(ingredient, choice)
+
+    label = nutrition[0]
+    calories = int(nutrition[1])
+    cautions = nutrition[2]
+    dietLabels = nutrition[3]
+    healthLabels = nutrition[4]
+    nutritions = nutrition[5]
+      
+    return render_template("nutrition.html", label=label, calories=calories, cautions=cautions, dietLabels=dietLabels, healthLabels=healthLabels, nutritions=nutritions)
+
+
 @app.errorhandler(500)
 def page_not_found(e):
     return render_template('error.html'), 500
@@ -72,3 +88,7 @@ def page_not_found(e):
 @app.errorhandler(400)
 def page_not_found(e):
     return render_template('error.html'), 400
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
