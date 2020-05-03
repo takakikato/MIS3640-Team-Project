@@ -11,7 +11,7 @@
         <h2>Input Ingredients and Find Recipes</h2>
         <form method="POST" name="recipe_search">
             {% if error %}
-            <p style="color:red">Could not find recipe, please try again.</p>
+            <p style="color:darkred">Could not find recipe, please try again.</p>
             {% endif %}
           
           <p> Ingredient 1: <input type="text" size="15" name="ingredient 1" />  </p>
@@ -47,9 +47,10 @@
       padding: 20px;
       margin: 15px;
       z-index: 1;
-      opacity: 0.9;
+      opacity: 1;
       color: white;
       background-color: mistyrose;
+      font-weight: bold;
       }
       h2 {
       text-align: left;
@@ -58,7 +59,7 @@
       padding: 20px;
       margin: 15px;
       z-index: 1;
-      opacity: 0.9;
+      opacity: 1;
       color: white;
       background-color: mistyrose;
       }
