@@ -26,8 +26,11 @@ def search():
 
         calories_1 = recipes[0]['calories']
         calories_2 = recipes[1]['calories']
-        calories_3 = recipes[2]['calories']
+        calories_3 = recipes[2]['calories']        
 
+        cautions_1 = recipes[0]['cautions']
+        cautions_2 = recipes[1]['cautions']
+        cautions_3 = recipes[2]['cautions']
 
         if recipes:
             return render_template("results.html", calories_1=calories_1, label_1=label_1)
