@@ -1,8 +1,5 @@
-from flask import Flask
-from flask import request
-from flask import render_template
-from flask import session
-from A import get_recipe, get_nutrition, print_recipe_nutrition, get_recipe2, get_recipe_nutrition
+from flask import Flask, request, render_template, session
+from recipe import get_recipe2, get_recipe_nutrition
 
 app = Flask(__name__)
 app.secret_key = 'dljsaklqk24e21cjn!Ew@@dsa5'
