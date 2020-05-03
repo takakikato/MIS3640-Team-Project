@@ -1,5 +1,4 @@
 import requests
-
 from pprint import pprint
 
 
@@ -56,6 +55,13 @@ def get_recipe2(ingredient, end):
         recipes.append(sub)
 
     return recipes
+
+def get_recipe_url(ingredient, end):
+    response = get_recipe(ingredient, end)
+    url_r = []
+    for recipe in response:
+        url_r.append(recipe['recipe']['url'])
+    return url_r
 
 
 def print_recipe(ingredient, end):
@@ -146,6 +152,7 @@ def print_nutrition(title, ingredient):
 
 def main():
     pprint(get_recipe2('fried rice', 3))
+    print(get_recipe_url('fried rice', 3))
     # print_recipe('Fried Rice', 3)
     # print_recipe_nutrition('Fried Rice', 3)
 

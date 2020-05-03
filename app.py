@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import requests
-from A import get_recipe, get_nutrition, print_recipe_nutrition
+from A import get_recipe, get_nutrition, print_recipe_nutrition, get_recipe2, get_recipe_url
 
 app = Flask(__name__)
 
@@ -12,11 +12,10 @@ def welcome():
 def recipe_search():
     if request.method == "POST":
         ingredient = str(request.form["ingredient"])
-        ingredient,  = get_recipe(location)
-
-
-        if station_name:
-            return render_template("results.html", )
+        recipes  = get_recipe2(ingredient, 3)
+        url = get_recipe_url(ingredient, 3)
+        if recipes:
+            return render_template("results.html", url=url, recipe=recipe)
         else:
             return render_template("results.html", error=True)
 
