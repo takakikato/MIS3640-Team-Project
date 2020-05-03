@@ -32,6 +32,8 @@ def search():
         cautions_2 = recipes[1]['cautions']
         cautions_3 = recipes[2]['cautions']
 
+
+
         if recipes:
             return render_template("results.html", calories_1=calories_1, label_1=label_1)
         else:
