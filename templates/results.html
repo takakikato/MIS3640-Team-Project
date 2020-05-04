@@ -6,149 +6,55 @@
     <title>Recommended Recipes</title>
 </head>
 <body>
-    <h1>Here are your recommended recipes!</h1>
-    <p>You can find link to the recipe below for step to step recipe guide.</p>
+    <div class="section_1">
+        <h1>Here are your recommended recipes!</h1>
+        <p>You can find link to the recipe below for step to step recipe guide.</p>
+    </div>
 
-    <h1></h1>
-    <h2> First Recommendation: {{label_1}}</h2>
-    <img src="{{ image_1 }}">
-    <h3> Calories: {{ calories_1 }}  |  Caution: {{ cautions_1 }}  </h3>
-    <h4> Diet Labels: {{ dietLabels_1 }}  | Health Labels {{ healthLabels_1 }}</h4>
+    <div class="section_2">
+        <h1></h1>
+        <h2> First Recommendation: {{label_1}}</h2>
+        <img src="{{ image_1 }}">
+        <h3> Calories: {{ calories_1 }}  |  Caution: {{ cautions_1 }}  </h3>
+        <h4> Diet Labels: {{ dietLabels_1 }}  | Health Labels {{ healthLabels_1 }}</h4>
 
-    <p> Ingredients: </p>
-    <p> {{ingredientLines_1}} </p>
+        <p> Ingredients: </p>
+        <p> {{ingredientLines_1}} </p>
 
-    <a href= "{{ url_1 }}">Link to Recipe </a>
-    <p></p>
-    <a href="{{url_for('nutrition', choice = '1')}}">Link to Nutrition Info</a>
-    
+        <a href= "{{ url_1 }}">Link to Recipe </a>
+        <p></p>
+        <a href="{{url_for('nutrition', choice = '1')}}">Link to Nutrition Info</a>
+        
 
-    <h1></h1>
-    <h2> Second Recommendation: {{label_2}}</h2>
-    <img src="{{ image_2 }}">
-    <h3> Calories: {{ calories_2 }}  |  Caution: {{ cautions_2 }}  </h3>
-    <h4> Diet Labels: {{ dietLabels_2 }}  | Health Labels {{ healthLabels_2 }}</h4>
+        <h1></h1>
+        <h2> Second Recommendation: {{label_2}}</h2>
+        <img src="{{ image_2 }}">
+        <h3> Calories: {{ calories_2 }}  |  Caution: {{ cautions_2 }}  </h3>
+        <h4> Diet Labels: {{ dietLabels_2 }}  | Health Labels {{ healthLabels_2 }}</h4>
 
-    <p> Ingredients: </p>
-    <p> {{ingredientLines_2}} </p>
+        <p> Ingredients: </p>
+        <p> {{ingredientLines_2}} </p>
 
-    <a href= "{{ url_2 }}">Link to Recipe </a>
-    <p></p>
-    <a href="{{url_for('nutrition', choice = '2')}}">Link to Nutrition Info</a>
+        <a href= "{{ url_2 }}">Link to Recipe </a>
+        <p></p>
+        <a href="{{url_for('nutrition', choice = '2')}}">Link to Nutrition Info</a>
 
 
-    <h1></h1>
-    <h2> Third Recommendation: {{label_3}}</h2>
-    <img src="{{ image_3 }}">
-    <h3> Calories: {{ calories_3 }}  |  Caution: {{ cautions_3 }}  </h3>
-    <h4> Diet Labels: {{ dietLabels_3 }}  | Health Labels {{ healthLabels_3 }}</h4>
+        <h1></h1>
+        <h2> Third Recommendation: {{label_3}}</h2>
+        <img src="{{ image_3 }}">
+        <h3> Calories: {{ calories_3 }}  |  Caution: {{ cautions_3 }}  </h3>
+        <h4> Diet Labels: {{ dietLabels_3 }}  | Health Labels {{ healthLabels_3 }}</h4>
 
-    <p> Ingredients: </p>
-    <p> {{ingredientLines_3}} </p>
+        <p> Ingredients: </p>
+        <p> {{ingredientLines_3}} </p>
 
-    <a href= "{{ url_3 }}">Link to Recipe </a>
-    <p></p>
-    <a href="{{url_for('nutrition', choice = '3')}}">Link to Nutrition Info</a>
+        <a href= "{{ url_3 }}">Link to Recipe </a>
+        <p></p>
+        <a href="{{url_for('nutrition', choice = '3')}}">Link to Nutrition Info</a>
+    </div>  
 </body>
 
-
-<style>
-    body {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #FE9B86;
-        overflow: scroll;
-        background-color:  #F3ECEB;
-        }
-    
-    p {
-        text-align: left;
-        font-size: small;
-        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        padding: 20px;
-        margin: 15px;
-        z-index: 1;
-        opacity: 1;
-        color:  #594d4a;
-        background-color:  #F3ECEB;
-        font-weight: bold;
-    }
-
-    h1 {
-        text-align: left;
-        font-size: large;
-        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        padding: 20px;
-        margin: 15px;
-        z-index: 1;
-        opacity: 1;
-        color:  #FE9B86;
-        background-color:  #F3ECEB;
-    }
-    
-    h2 {
-        text-align: left;
-        font-size: medium;
-        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        padding: 20px;
-        margin: 15px;
-        z-index: 1;
-        opacity: 1;
-        color:  #FE9B86;
-        background-color:  #F3ECEB;
-    }
-
-    h3 {
-        text-align: left;
-        font-size: medium;
-        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        padding: 20px;
-        margin: 15px;
-        z-index: 1;
-        opacity: 1;
-        color:  #FE9B86;
-        background-color:  #F3ECEB;
-    }
-    
-    h4 {
-        text-align: left;
-        font-size: 1rem;
-        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        padding: 20px;
-        margin: 15px;
-        z-index: 1;
-        opacity: 1;
-        color:  #FE9B86;
-        background-color:  #F3ECEB;
-    }
-
-   a {
-    text-align: left;
-    font-size: 5rem;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding: 15px;
-    margin: 15px;
-    z-index: 1;
-    color:lightslategrey;
-    opacity: 0.8;
-    text-decoration: none;
-    background-color:  #F3ECEB;
-    }
-    
-    
-   .color-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    opacity: 0.0;
-   }
-    </style>
     
 
 </html>
