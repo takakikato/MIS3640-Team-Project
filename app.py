@@ -6,7 +6,7 @@ app.secret_key = 'dljsaklqk24e21cjn!Ew@@dsa5'
 
 @app.route('/')
 def welcome():
-    return render_template('welcome.html')
+    return render_template('welcome_2.html')
     
 
 @app.route("/search/", methods=["GET", "POST"])
@@ -55,7 +55,7 @@ def search():
         session['ingredient'] = ingredient
 
         if recipes:
-            return render_template("results.html", calories_1=calories_1, calories_2=calories_2, calories_3=calories_3, label_1=label_1, label_2=label_2,
+            return render_template("results_2.html", calories_1=calories_1, calories_2=calories_2, calories_3=calories_3, label_1=label_1, label_2=label_2,
             label_3=label_3, cautions_1=cautions_1, cautions_2=cautions_2, cautions_3=cautions_3, dietLabels_1=dietLabels_1, dietLabels_2=dietLabels_2, dietLabels_3=dietLabels_3,
             healthLabels_1=healthLabels_1, healthLabels_2=healthLabels_2, healthLabels_3=healthLabels_3, ingredientLines_1=ingredientLines_1, ingredientLines_2=ingredientLines_2,
             ingredientLines_3=ingredientLines_3, url_1=url_1, url_2=url_2, url_3=url_3, image_1=image_1, image_2=image_2, image_3=image_3)
