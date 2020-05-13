@@ -1,7 +1,7 @@
 import requests
 from pprint import pprint
 
-recipe_id, recipe_key, nutrition_id, nutrition_key = 'ef73e741', '687e39d9619e78a7956d715af8585b7b', '366257d2', 'd01df5907c09a9b04ba0dd4c0d0ef652'
+recipe_id, recipe_key, nutrition_id, nutrition_key = 'recipe_id', 'recipe_key', 'nutrition_id', 'nutrition_key' 
 
 
 def get_json(url, parameters):
