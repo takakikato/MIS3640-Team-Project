@@ -8,21 +8,103 @@
 <body>
     <div class="row">
       <div class="column">
-        <h2>Input Ingredients and Find Recipes with Those Ingredients</h2>
+        <h2>Input Ingredients and Find Recipes</h2>
         <form method="POST" name="recipe_search">
             {% if error %}
             <p style="color:red">Could not find recipe, please try again.</p>
             {% endif %}
           
-          <p> Ingredient 1: <input type="text" size="15" name="ingredient 1" />  </p>
-          <p> Ingredient 2: <input type="text" size="15" name="ingredient 2" /> </p>
-          <p> Ingredient 3: <input type="text" size="15" name="ingredient 3" />  </p>
-          <p> Ingredient 4: <input type="text" size="15" name="ingredient 4" /> </p>
-          </p>
-          <p>
-            <input type="submit" value="Find a Recipe" />
-          </p>
+          <p> Ingredient 1: <input type="text" size="30" name="ingredient 1" />  </p>
+          <p> Ingredient 2: <input type="text" size="30" name="ingredient 2" /> </p>
+          <p> Ingredient 3: <input type="text" size="30" name="ingredient 3" />  </p>
+          <p> Ingredient 4: <input type="text" size="30" name="ingredient 4" /> </p>
+          
+          <input type="submit" value="Find a Recipe" />
         </form>
       </div>
     </div>
     </body>
+
+    <style>
+      body {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #89A388;
+      overflow: hidden;
+      background-color:  #F3F5F3;
+      }
+      
+      p {
+      text-align: left;
+      font-size: 2rem;
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      padding: 20px;
+      margin: 15px;
+      z-index: 1;
+      opacity: 1;
+      color:  #89A388;
+      background-color:  #F3F5F3;
+      font-weight: bold;
+      }
+
+      h2 {
+      text-align: left;
+      font-size: 4rem;
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      padding: 20px;
+      margin: 15px;
+      z-index: 1;
+      opacity: 1;
+      color:  #5C775B;
+      background-color:  #F3F5F3;
+      }
+            
+     a {
+      text-align: left;
+      font-size: 5rem;
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      padding: 15px;
+      margin: 15px;
+      z-index: 1;
+      color:lightslategrey;
+      opacity: 0.8;
+      text-decoration: none;
+      background-color:  #F3F5F3;
+      }
+      
+    input [type= "text"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border-color: #FE9B86;
+    }
+
+    button{
+      background-color: #FE9B86;
+      border: none;
+      color:  #FFF5F3;
+      border-color: #F3F5F3;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+      
+     .color-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      opacity: 0.0;
+     }
+      </style>
+      
+      </html>

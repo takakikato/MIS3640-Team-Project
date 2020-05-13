@@ -6,45 +6,55 @@
     <title>Recommended Recipes</title>
 </head>
 <body>
-    <h1>Here are your recommended recipes!</h1>
-    <p>You can find link to the recipe below for step to step recipe guide.</p>
+    <div class="section_1">
+        <h1>Here are your recommended recipes!</h1>
+        <p>You can find link to the recipe below for step to step recipe guide.</p>
+    </div>
 
-    <h1></h1>
-    <h2> First Recommendation: {{label_1}}</h2>
-    <img src="{{ image_1 }}">
-    <h3> Calories: {{ calories_1 }}  |  Caution: {{ cautions_1 }}  </h3>
-    <h4> Diet Labels: {{ dietLabels_1 }}  | Health Labels {{ healthLabels_1 }}</h4>
+    <div class="section_2">
+        <h1></h1>
+        <h2> First Recommendation: {{label_1}}</h2>
+        <img src="{{ image_1 }}">
+        <h3> Calories: {{ calories_1 }}  |  Caution: {{ cautions_1 }}  </h3>
+        <h4> Diet Labels: {{ dietLabels_1 }}  | Health Labels {{ healthLabels_1 }}</h4>
 
-    <p> Ingredients: </p>
-    <p> {{ingredientLines_1}} </p>
+        <p> Ingredients: </p>
+        <p> {{ingredientLines_1}} </p>
 
-    <a href= "{{ url_1 }}">Link to Recipe </a>
-    <a href="{{url_for('nutrition', choice = '1')}}">Link to Nutrition Info</a>
+        <a href= "{{ url_1 }}">Link to Recipe </a>
+        <p></p>
+        <a href="{{url_for('nutrition', choice = '1')}}">Link to Nutrition Info</a>
+        
+
+        <h1></h1>
+        <h2> Second Recommendation: {{label_2}}</h2>
+        <img src="{{ image_2 }}">
+        <h3> Calories: {{ calories_2 }}  |  Caution: {{ cautions_2 }}  </h3>
+        <h4> Diet Labels: {{ dietLabels_2 }}  | Health Labels {{ healthLabels_2 }}</h4>
+
+        <p> Ingredients: </p>
+        <p> {{ingredientLines_2}} </p>
+
+        <a href= "{{ url_2 }}">Link to Recipe </a>
+        <p></p>
+        <a href="{{url_for('nutrition', choice = '2')}}">Link to Nutrition Info</a>
+
+
+        <h1></h1>
+        <h2> Third Recommendation: {{label_3}}</h2>
+        <img src="{{ image_3 }}">
+        <h3> Calories: {{ calories_3 }}  |  Caution: {{ cautions_3 }}  </h3>
+        <h4> Diet Labels: {{ dietLabels_3 }}  | Health Labels {{ healthLabels_3 }}</h4>
+
+        <p> Ingredients: </p>
+        <p> {{ingredientLines_3}} </p>
+
+        <a href= "{{ url_3 }}">Link to Recipe </a>
+        <p></p>
+        <a href="{{url_for('nutrition', choice = '3')}}">Link to Nutrition Info</a>
+    </div>  
+</body>
+
     
 
-    <h1></h1>
-    <h2> Second Recommendation: {{label_2}}</h2>
-    <img src="{{ image_2 }}">
-    <h3> Calories: {{ calories_2 }}  |  Caution: {{ cautions_2 }}  </h3>
-    <h4> Diet Labels: {{ dietLabels_2 }}  | Health Labels {{ healthLabels_2 }}</h4>
-
-    <p> Ingredients: </p>
-    <p> {{ingredientLines_2}} </p>
-
-    <a href= "{{ url_2 }}">Link to Recipe </a>
-    <a href="{{url_for('nutrition', choice = '2')}}">Link to Nutrition Info</a>
-
-
-    <h1></h1>
-    <h2> Third Recommendation: {{label_3}}</h2>
-    <img src="{{ image_3 }}">
-    <h3> Calories: {{ calories_3 }}  |  Caution: {{ cautions_3 }}  </h3>
-    <h4> Diet Labels: {{ dietLabels_3 }}  | Health Labels {{ healthLabels_3 }}</h4>
-
-    <p> Ingredients: </p>
-    <p> {{ingredientLines_3}} </p>
-
-    <a href= "{{ url_3 }}">Link to Recipe </a>
-    <a href="{{url_for('nutrition', choice = '3')}}">Link to Nutrition Info</a>
-</body>
 </html>
